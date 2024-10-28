@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donations - Jones Grove Missionary Baptist Church</title>
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  
+  <header>
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Jones Grove Missionary Baptist Church Logo">
+    </div>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ministries.html">Ministries</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="donations.html">Donations</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="donations-intro">
+      <h1>Support Our Church</h1>
+      <p>
+        Your generous donations help us continue to spread the Word of God, support our ministries, 
+        and serve our community. There are several ways you can give, and we deeply appreciate 
+        any contributions you make to further the work of Jones Grove Missionary Baptist Church.
+      </p>
+    </section>
+
+    <section class="donation-options">
+      <h2>Ways to Give</h2>
+
+      <article class="donation-option">
+        <h3>Online Donations</h3>
+        <p>
+          You can give securely online via our church’s donation portal. Whether it’s a one-time offering 
+          or a recurring gift, you can support the church easily from the comfort of your home.
+        </p>
+
+        <!-- Start of Donations Form -->
+        <form method="post" action="https://webdevbasics.net/scripts/demo.php" class="donation-form">
+          <h4>Donation Form</h4>
+
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">Phone (Optional):</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+          <label for="donation-amount">Donation Amount (USD):</label>
+          <input type="number" id="donation-amount" name="donation-amount" required min="1" step="0.01">
+
+          <label for="donation-type">Donation Type:</label>
+          <select id="donation-type" name="donation-type">
+            <option value="One-time">One-time</option>
+            <option value="Recurring">Recurring</option>
+          </select>
+
+          <label for="message">Message or Special Instructions (Optional):</label>
+          <textarea id="message" name="message" rows="5" placeholder="Enter any special instructions..."></textarea>
+
+          <button type="submit">Submit Donation</button>
+        </form>
+        <!-- End of Donations Form -->
+
+      </article>
+
+      <article class="donation-option">
+        <h3>In-Person Giving</h3>
+        <p>
+          You can give during any of our regular worship services. Just place your tithes and offerings 
+          in the donation baskets during the offering time. Our ushers will be happy to assist you.
+        </p>
+      </article>
+
+      <article class="donation-option">
+        <h3>Mail Donations</h3>
+        <p>
+          If you prefer, you can mail your donations directly to the church. Please send checks to:
+          <br><br>
+          Jones Grove Missionary Baptist Church <br>
+          123 Church Street <br>
+          Louisville, GA 30434
+        </p>
+      </article>
+
+      <article class="donation-option">
+        <h3>Other Ways to Give</h3>
+        <p>
+          You can also give through other means, such as planned giving, stock donations, or legacy giving. 
+          Please <a href="contact.html">contact us</a> for more information on these options.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Justice Ricks jr00381@my.westga.edu | Follow us on 
+      <a href="#">Facebook</a>, <a href="#">Twitter</a>
+    </p>
+  </footer>
+</body>
+</html>
