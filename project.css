@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -12,7 +13,7 @@ header {
   padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 header .logo img {
@@ -24,13 +25,13 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-around; 
-  flex-grow: 1; 
+  justify-content: space-around;
+  flex-grow: 1;
 }
 
 nav ul li {
-  flex: 1; 
-  text-align: center; 
+  flex: 1;
+  text-align: center;
 }
 
 nav ul li a {
@@ -129,47 +130,48 @@ footer a {
   text-decoration: none;
 }
 
-/* Event Calendar Table Styles */
+
 .event-calendar table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
 }
 
 .event-calendar th {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-    font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  font-weight: bold;
 }
 
 .event-calendar td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
 }
 
 .event-calendar tr:nth-child(even) {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 
 .event-calendar tr:hover {
-    background-color: #e0e0e0;
+  background-color: #e0e0e0;
 }
+
 
 @media (min-width: 768px) {
   nav ul {
-    flex-direction: row; 
+    flex-direction: row;
   }
 }
 
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
   }
 
@@ -178,7 +180,7 @@ footer a {
   }
 }
 
-/* Donations Form Styling */
+
 .donation-form {
   max-width: 600px;
   margin: 20px auto;
@@ -202,8 +204,8 @@ footer a {
   font-family: 'Arial', sans-serif;
 }
 
-.donation-form input, 
-.donation-form select, 
+.donation-form input,
+.donation-form select,
 .donation-form textarea {
   width: 100%;
   padding: 10px;
@@ -227,4 +229,32 @@ footer a {
 
 .donation-form button:hover {
   background-color: #218838;
+}
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05); 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    gap: 5px;
+  }
 }
