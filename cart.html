@@ -36,28 +36,25 @@
       <p>Review your items below before proceeding to checkout.</p>
 
       <table class="cart-table">
-        <tr>
-          <th>Item</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Total</th>
-        </tr>
-        <tr>
-          <td>NIV Study Bible</td>
-          <td>1</td>
-          <td>$25.00</td>
-          <td>$25.00</td>
-        </tr>
-        <tr>
-          <td>Faith-Inspired T-Shirt</td>
-          <td>2</td>
-          <td>$15.00</td>
-          <td>$30.00</td>
-        </tr>
-        <tr class="cart-total-row">
-          <td colspan="3">Grand Total</td>
-          <td>$55.00</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Dynamic rows will be added here -->
+        </tbody>
+        <tfoot>
+          <tr class="cart-total-row">
+            <td colspan="3">Grand Total</td>
+            <td id="grand-total">$0.00</td>
+            <td></td>
+          </tr>
+        </tfoot>
       </table>
 
       <button type="button" class="checkout-button" onclick="checkout()">Proceed to Checkout</button>
@@ -70,6 +67,66 @@
       <a href="#">Facebook</a>, <a href="#">Twitter</a>
     </p>
   </footer>
+
+  <script>
+    const cart = [];
+
+    // Add an item to the cart
+    function addToCart(name, price) {
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      renderCart();
+    }
+
+    // Remove an item from the cart
+    function removeFromCart(name) {
+      const itemIndex = cart.findIndex(item => item.name === name);
+      if (itemIndex > -1) {
+        cart.splice(itemIndex, 1);
+      }
+      renderCart();
+    }
+
+    // Render the cart items in the table
+    function renderCart() {
+      const cartItems = document.getElementById('cart-items');
+      cartItems.innerHTML = '';
+
+      let grandTotal = 0;
+
+      cart.forEach(item => {
+        const total = item.price * item.quantity;
+        grandTotal += total;
+
+        const row = `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>$${item.price.toFixed(2)}</td>
+            <td>$${total.toFixed(2)}</td>
+            <td><button onclick="removeFromCart('${item.name}')">Remove</button></td>
+          </tr>
+        `;
+        cartItems.insertAdjacentHTML('beforeend', row);
+      });
+
+      document.getElementById('grand-total').textContent = `$${grandTotal.toFixed(2)}`;
+    }
+
+    // Placeholder checkout function
+    function checkout() {
+      alert('Proceeding to checkout with the following items:\n' + JSON.stringify(cart, null, 2));
+    }
+
+    // Example of adding items (replace these calls with your actual product page's button logic)
+    addToCart('NIV Study Bible', 25.00);
+    addToCart('Faith-Inspired T-Shirt', 15.00);
+    addToCart('Faith-Inspired T-Shirt', 15.00);
+  </script>
 
 </body>
 </html>
